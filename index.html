@@ -1,71 +1,110 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<!-- These graphics aren't meant to be viewed on mobile screens -->
+<!-- Descriptive Sidebar that calls js functions that wrap all my projects? -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Ivan Sheu</title>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="chrome=1">
+      <title>Ivan Sheu</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="user-page.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Ivan Sheu</h1>
-        <p>Data Analysis and Communication</p>
-        <p></p>
-
-        <p class="view"><a href="https://github.com/isheu">GitHub >></a></p>
-        <p class="view"><a href="http://www.linkedin.com/pub/ivan-sheu/1b/903/46/">LinkedIn Profile >></a></p>
-      </header>
-   
-      <section>
+      <link rel="stylesheet" href="stylesheets/styles.css">
+      <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <link rel="stylesheet" href="user-page.css">
+      <script src="javascripts/scale.fix.js"></script>
+      <script src="./user-page.js"></script>
+   </head>
+   <body>
+      <div class="wrapper">
+         <header>
+            <h1>Ivan Sheu</h1>
+            <p class = "tech_header">Data Analysis and Communication</p>
+            <br class="view"><a href="https://github.com/isheu">GitHub &#187;</a>
+            <br class="view"><a href="http://www.linkedin.com/pub/ivan-sheu/1b/903/46/">LinkedIn Profile &#187;</a>
+            <p class = "view">&nbsp</p>
+            <h4>About Me</h4>
+            <p>I'd like to share some of my work here. My career at Acumen, LLC (a public health data analysis firm) allows me to work daily with vast Medicare datasets (medical claims, provider and beneficiary enrollment databases, fraud case narratives). I put this data to use to monitor regional utilization, to devise metrics to capture specific abusive behaviors, to evaluate effects of a policy, etc. 
+            <p> It's been wonderful to uncover stories and to tease out structure from data. I'm excited to learn about, and busy myself learning techniques available to achieve these ends. <p>
+            I'm particularly keen on exploring visualization as a narrative tool, and as a tool for experts to diagnose and evaluate their work. Many of my publishable projects on this site relate to data communication.
+            </p>
+            <h4>I've learned a lot from: </h4>
+            <ul>
+               <a href="http://www.cs.ubc.ca/~nando/"><li class = "links">Nando de Freitas</li></a>
+               <a href="https://www.coursera.org/"><li class = "links">Coursera</li></a>
+               <a href="http://bost.ocks.org/mike/"><li class = "links">Mike Bostock</li></a>
+               <a href="http://eagereyes.org"><li class = "links">Robert Kosara</li></a>
+               <a href="http://earthobservatory.nasa.gov/blogs/elegantfigures/"><li class = "links">Robert Simmons</li></a>
+               <a href="http://driven-by-data.net/"><li class = "links">Gregor Aisch</li></a>
+            </ul>
+         </header>
       
-      <h3> <a name="Hello" class="anchor" href="#hello"><span class="octicon octicon-link"></span></a>Welcome!</h3>
-      <p>I'd like to share some of my work immerses me in data, and it's wonderful to uncover stories and to tease out structure from data. <br>
-      I'm excited to learn and busy myself learning techniques available to achieve this. <br>
-      I'm particularly keen on exploring visualization as a narrative tool, and as a tool for experts to diagnose and evaluate their work. Most of my published projects on this site relate to this. <br>
-      </p>
-      <p> Content knowledge - fraud, metrics engineering
-      <p> Kaggle </p>
-      <p> Data Visualization </p>
-      
-      <table class = "container">
-         <tr>
-         <td colspan = 2><a href="http://www.linkedin.com/pub/ivan-sheu/1b/903/46/">Regional Monitoring</a></td>
-         </tr>
-         <tr>
-         <td colspan = 2><a href="../../D3/DSPG/IPPS_County_Dist/index.html">County Border Distance Mapping</a></td>
-         </tr>
-         <tr>
-         <td class = "left"><a href="../../D3/DSPG/IPPS_County_Dist/index.html"><img src="county_border_preview.png" class="thumbnail"></a>
-         <td class = "right">This project gave me a chance to roll my own GeoJSON and to figure out the nuances of working with geographic projections, and geographic subunits</div>
-         </tr>
-         <tr>
-         <td colspan = 2><a href="../../D3/DSPG/MUE_Violators/index.html">Lab Testing Overutilization Tool</a></td>
-         </tr>
-         <tr>
-         <td class = "left"><a href="../../D3/DSPG/MUE_Violators/index.html"><img src="mue_violators.png" class="thumbnail"></a>
-         <td class = "right">I'd like to share some of my work immerses me in data, and it's wonderful to uncover stories and to tease out structure from data. 
-         I'm excited to learn and busy myself learning techniques available to achieve this. I'm particularly keen on exploring visualization as a narrative tool, and as a tool for experts to diagnose and evaluate their work. Most of my published projects on this site relate to this. </div>
-         </tr>
-         <tr>
-         <td colspan = 2><a href="../../D3/d3_Sandbox/corporate_tax/index.html">NY Times Graphic Study</a></td>
-         <tr>
-         <td class = "left"><a href="../../D3/d3_Sandbox/corporate_tax/index.html"><img src="tax_graphic.png" class="thumbnail"></a>
-         <td class = "right">I'd like to share some of my work immerses me in data, and it's wonderful to uncover stories and to tease out structure from data. 
-         I'm excited to learn and busy myself learning techniques available to achieve this. I'm particularly keen on exploring visualization as a narrative tool, and as a tool for experts to diagnose and evaluate their work. Most of my published projects on this site relate to this. </div>
-         </tr>
-      </table>      
-      </code></pre>
-   </div>
-
-   <script src="javascripts/scale.fix.js"></script>
-
-  </body>
+         <section>
+               <p> Content knowledge - fraud, metrics engineering
+               <div id = "data-viz" class = "project_div">
+                  <h2> data visualization </h2>
+                  <ul>
+                     <h3 class = "data-viz"><a href="http://isheu.github.io/DACG-Moratoria">regional monitoring</a></h3>
+                     <a href="../../d3/dspg/ipps_county_dist/index.html"><img src="region_monitoring.png" class="thumbnail"></a>
+                     <p class = "description">
+                     One of the more complex visualization projects to date. 
+                     </p>
+                  </ul>
+                  <ul>
+                     <h3 class = "data-viz"><a href="http://isheu.github.io/IPPS_County_Dist">distance to county border mapping</a></h3>
+                     <a href="../../d3/dspg/ipps_county_dist/index.html"><img src="county_border_preview.png" class="thumbnail"></a>
+                     <p class = "description">
+                     This project gave me a chance to roll my own geojson and to figure out the nuances of working with geographic projections, and geographic subunits
+                     </p>
+                  </ul>
+                  <ul>
+                     <h3 class = "data-viz"><a href="http://isheu.github.io/DSPG">lab testing overutilization tool</a></h3>
+                     <a href="../../d3/dspg/mue_violators/index.html"><img src="mue_violators.png" class="thumbnail"></a>
+                     <p class = "description">
+                     The purpose of this project was to create a presentation tool that lets users sift through a wide array of results, which begin with a broad description of the behavior, to more and more specific instances. 
+                     </p>
+                  </ul>
+                  <ul>
+                     <h3 class = "data-viz"><a href="http://isheu.github.io/">ny times graphic study</a></h3>
+                     <a href="../../d3/d3_sandbox/corporate_tax/index.html"><img src="tax_graphic.png" class="thumbnail"></a>
+                     <p class = "description">
+                     One of my favorite interactive graphics of 2013 was the New York Times' examination of the tax rate paid by U.S. companies: <a href = "http://www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html?_r=1&amp;&amp;gwt=regi">Across U.S. Companies, Tax Rates Vary Greatly</a>.
+                     The bubble placement along a meaningful dimension, and excellent accompanying annotations (with intuitively-linked tooltips) really did it for me. But I was not at all sure how they performed the bubble placement for this graphic. I know of the treemap layout which can pack rectangles tightly, but how did they pack circles while constraining the x-position? The circle-packing problem into a rectangular region is not trivial, so I wanted to see how I could get an approximation. 
+                        <p> Please note that all content (data, annotations) is the property of NY Times; here I am just exploring a way to implement a similar type graphic.  </p>
+                     </p>
+                  </ul>
+               </div>
+               <div id = "analysis" class = "project_div">
+                  <h2> pattern mining, machine learning </h2>
+                  <ul>
+                     <h3><a href="http://isheu.github.io/pattern-mining/">standard of care based on frequent itemsets</a></h3>
+                     <p class = "description">
+                     In this project, I wanted to identify frequently-seen sequences of procedures for patients with certain conditions. This could help to identify established standards of care, starting directly from the data. Such information would be useful to identify suspect providers who deviate from these standards. 
+                     </p>
+                  </ul>
+                  <ul>
+                     <h3><a href="http://isheu.github.io/pattern-mining/">classifying physician specialties with topic model</a></h3>
+                     <p class = "description">
+                     When investigating providers, I had access to their self-reported specialty, but these fields are not always reliable. Specialty information can help to set our expectations about their behavior, and here I set out to determine specialty based on how the provider practices (what procedures they bill, benes they see) rather than the reported value. I investigated here the use of a topic model to generate meaningful specialties (topics). 
+                     </p>
+                  </ul>
+                  <ul>
+                     <h3><a href="http://isheu.github.io/pattern-mining/">text field classification of comment text</a></h3>
+                     <p class = "description">
+                     This project was my first introduction to topic models. I used R's topicmodels package to categorize the freeform "comment" fields in one of Medicare's provider enrollment databases. 
+                     </p>
+                  </ul>
+                  <ul>
+                     <h3><a href="http://suzukilab.uchicago.edu">tumor detection for CT colonography scans</a></h3>
+                     <p class = "description">
+                     I spent three years in . One primary project . From this experience, I was comfortable thinking about evaluation of models, etc.
+                     New features, experiment with other machine learning algorithms (SVM, mixture of SVMs, evaluate performance)
+                     </p>
+                  </ul>
+               </div>
+         </section>
+      </div>
+   </body>
 </html>

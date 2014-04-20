@@ -1,9 +1,61 @@
-.container {
-   width: 500px;
+.tech_header {
+   font-family: Courier;
+   text-transform: uppercase;
 }
-td {
-   border-bottom: 0px;
+.thumbnail {
+   display: inline;
+   float: left;
 }
-td.right { 
-   vertical-align: top;
+
+.project_div { width: 390px; }
+div#data-viz { float: left; }
+div#analysis { float: right; }
+
+/*
+header h4 {
+   font-family: Courier;
+   font-weight: normal;
+   text-transform: uppercase;
+   font-size: 12.5px;
+   color: #666;
 }
+*/
+
+section ul {
+   margin-left: 0px;
+   padding-left: 7px;
+   padding-right: 7px;
+   padding-bottom: 15px;
+   border-bottom: 1px dotted #999;
+}
+section ul:hover {
+   background-color: #f9f9f9;
+}
+
+header ul {
+   width: 100%;
+   margin-left: 0px; 
+   padding-left: 0px; 
+}
+
+header li.links {
+   width: 100%;
+   margin-left: 15px; 
+   list-style-type: circle;
+   color: rgb(37, 61, 81);
+}
+header li.links:hover {
+   color: #cc181e;
+}
+
+h3.data-viz a {
+   color: #57945a;
+}
+/*
+1px solid #c2ced9
+#e6eaeb
+*/
+/*
+#ffffff
+#81868a
+*/

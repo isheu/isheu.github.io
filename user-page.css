@@ -42,7 +42,7 @@ header li.links {
    width: 100%;
    margin-left: 15px; 
    list-style-type: circle;
-   color: rgb(37, 61, 81);
+   /* color: rgb(37, 61, 81); */
 }
 header li.links:hover {
    color: #cc181e;
@@ -51,11 +51,20 @@ header li.links:hover {
 h3.data-viz a {
    color: #57945a;
 }
-/*
-1px solid #c2ced9
-#e6eaeb
-*/
-/*
-#ffffff
-#81868a
-*/
+
+a li.author {
+   list-style: none;
+   margin-left: 7.5px;
+   color: #0066aa;
+}
+li.author:hover {
+   color: #cc181e;
+}
+h4.author {
+   color: rgb(37, 61, 81);
+   font-weight: normal;
+   margin-bottom: 2px;
+}
+h4.author span {
+   font-style: italic;
+}

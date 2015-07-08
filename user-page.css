@@ -28,9 +28,11 @@ section ul {
    padding-bottom: 15px;
    border-bottom: 1px dotted #999;
 }
+/*
 section ul:hover {
    background-color: #f9f9f9;
 }
+*/
 
 header ul {
    width: 100%;

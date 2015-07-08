@@ -14,11 +14,21 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
       <link rel="stylesheet" href="user-page.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>      
       <script src="javascripts/scale.fix.js"></script>
-      <script src="./user-page.js"></script>
+      <style type="text/css">
+         .referrals, .moratoria {
+            border: 1px solid white;
+         }
+         .referrals:hover, .moratoria:hover {
+            border: 1px solid #cc181e;
+         }
+      </style>
    </head>
    <body>
       <div class="wrapper">
+         <img class="referrals-curtain" style= "height:0px; position:absolute; width:1080px" src="viz-referral-relationships.png">
+         <img class="moratoria-curtain" style= "height:0px; position:absolute; width:1080px" src="region_monitoring.png">
          <header>
             <h1>Ivan Sheu</h1>
             <p class = "tech_header">Data Analysis and Communication</p>
@@ -42,12 +52,19 @@
          </header>
       
          <section>
-               <p> Content knowledge - fraud, metrics engineering
+               <!-- <p> Content knowledge - fraud, metrics engineering -->
                <div id = "data-viz" class = "project_div">
                   <h2> data visualization </h2>
                   <ul>
+                     <h3 class = "data-viz"><a href = #>referral networks</a></h3>
+                     <div class = "referrals" style="width:376px; height:198.21875px; background:url('viz-referral-relationships.png') no-repeat center center"></div>
+                     <p class = "description">
+                     For this project, I worked with another analyst to produce a set of re-usable graphic modules -- map generator, tooltip, and table -- and a standard practice for coordinating events and developing new visualizations. The first product from this effort was a graphic examining referral networks. This tool placed physicians geographically with their direct peers while displaying node and link detail in the table. Unfortunately, due to greater data security for this project, I am unable to publish the functional graphic online. 
+                     </p>
+                  </ul>
+                  <ul>
                      <h3 class = "data-viz"><a href = #>regional monitoring</a></h3>
-                     <a href = #><img src="region_monitoring.png" class="thumbnail"></a>
+                     <a href = #><img class="moratoria" src="region_monitoring.png" class="thumbnail"></a>
                      <p class = "description">
                      This was my team's endeavour to build a framework that consolidates visualization of many different, related views of some data. We wanted a simple and flexible dashboard, coded in a way to let charts/graphics be switched out as needed for the specific data/patterns to be communicated. 
                      I primarily worked on the map and line charts, which have linked behaviors depending on mouse events, while coordinating with another analyst who developed the layout using Bootstrap. Unfortunately, due to greater data security for this project, I am unable to publish this dashboard online. 
@@ -113,5 +130,58 @@
                </div>
          </section>
       </div>
+      <script>
+         var clicked_referrals = 0;
+         $(".referrals").click(function() {
+            if (clicked_moratoria | clicked_referrals) {
+               $(".moratoria-curtain").animate({
+                  height: "0px"
+               });
+               clicked_moratoria = 0;
+               $(".referrals-curtain").animate({
+                  height: "0px"
+               });
+               clicked_referrals = 0;
+            }
+            else {
+               $(".referrals-curtain").animate({
+                  height: "569px"
+               });
+               clicked_referrals = 1;
+               $(".referrals-curtain").click(function() {
+                  $(".referrals-curtain").animate({
+                     height: "0px"
+                  });
+                  clicked_referrals = 0;
+               })
+            }
+         })
+
+         var clicked_moratoria = 0;
+         $(".moratoria").click(function() {
+            if (clicked_moratoria | clicked_referrals) {
+               $(".referrals-curtain").animate({
+                  height: "0px"
+               });
+               clicked_referrals = 0;
+               $(".moratoria-curtain").animate({
+                  height: "0px"
+               });
+               clicked_moratoria = 0;
+            }
+            else {
+               $(".moratoria-curtain").animate({
+                  height: "768px"
+               });
+               clicked_moratoria = 1;
+               $(".moratoria-curtain").click(function() {
+                  $(".moratoria-curtain").animate({
+                     height: "0px"
+                  });
+                  clicked_moratoria = 0;
+               })
+            }
+         })
+      </script>
    </body>
 </html>

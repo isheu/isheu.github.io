@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <!-- These graphics aren't meant to be viewed on mobile screens -->
-<!-- Descriptive Sidebar that calls js functions that wrap all my projects? -->
 <html>
    <head>
       <meta charset="utf-8">
@@ -15,26 +14,59 @@
       <![endif]-->
       <link rel="stylesheet" href="user-page.css">
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>      
-      <script src="javascripts/scale.fix.js"></script>
+      <script src="javascripts/scale.fix.js"></script> 
       <style type="text/css">
-         .referrals, .moratoria {
-            border: 1px solid white;
+         .hovered {
+            opacity: 0.7;
+            z-index: -1;
          }
-         .referrals:hover, .moratoria:hover {
+         .curtain-thumbnail {
+            color: #cc181e;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            padding-top: 5px;
+            font-size: 18px;
+            border: 1px solid white;
+            z-index: -1;
+         }
+         .project-thumbnail {
+            color: #0066aa;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            padding-top: 5px;
+            font-size: 18px;
+            border: 1px solid white;
+            z-index: -1;
+         }
+         .curtain-thumbnail:hover {
             border: 1px solid #cc181e;
+            cursor: pointer;
+         }
+         .project-thumbnail:hover {
+            border: 1px solid #0066aa;
+            text-shadow: 0.2  5px 0.25px black;
+            cursor: pointer;
+         }
+         .curtain { z-index: 3; }
+         .curtain-down {
+            box-shadow: -5px -5px 20px #999;
+            padding: 0px;
+            border: 1px solid #333; 
          }
       </style>
    </head>
    <body>
       <div class="wrapper">
-         <img class="referrals-curtain" style= "height:0px; position:absolute; width:1080px" src="viz-referral-relationships.png">
-         <img class="moratoria-curtain" style= "height:0px; position:absolute; width:1080px" src="region_monitoring.png">
+         <img id="referrals-curtain" class="curtain" style= "height:0px; width:965px; margin-left:-435px; margin-top:-100px; position:fixed; top:25%; left:50%; align:center" src="viz-referral-relationships.png">
+         <img id="moratoria-curtain" class="curtain" style= "height:0px; width:965px; margin-left:-435px; margin-top:-100px; position:fixed; top:25%; left:50%; align:center" src="viz-moratoria.png">
          <header>
             <h1>Ivan Sheu</h1>
             <p class = "tech_header">Data Analysis and Communication</p>
             <br class="view"><a href="https://github.com/isheu">GitHub &#187;</a>
             <br class="view"><a href="http://www.linkedin.com/pub/ivan-sheu/1b/903/46/">LinkedIn Profile &#187;</a>
-            <p class = "view">&nbsp</p>
+            <p class = "blankspace">&nbsp</p>
             <h4>About Me</h4>
             <p>I'd like to share some of my work here. My career at Acumen, LLC (a public health data analysis firm) allows me to work daily with vast Medicare datasets (medical claims, provider and beneficiary enrollment databases, fraud case narratives). I put this data to use to monitor regional utilization, to devise metrics to capture specific abusive behaviors, to evaluate effects of a policy, etc. 
             <p> It's been wonderful to uncover stories and to tease out structure from data. I'm excited to learn about, and busy myself learning techniques available to achieve these ends. <p>
@@ -57,37 +89,37 @@
                   <h2> data visualization </h2>
                   <ul>
                      <h3 class = "data-viz"><a href = #>referral networks</a></h3>
-                     <div class = "referrals" style="width:376px; height:198.21875px; background:url('viz-referral-relationships.png') no-repeat center center"></div>
+                     <div class = "referrals thumbnail curtain-thumbnail" style="width:376px; height:198.21875px; background:url('viz-referral-relationships.png') no-repeat center center"></div>
                      <p class = "description">
                      For this project, I worked with another analyst to produce a set of re-usable graphic modules -- map generator, tooltip, and table -- and a standard practice for coordinating events and developing new visualizations. The first product from this effort was a graphic examining referral networks. This tool placed physicians geographically with their direct peers while displaying node and link detail in the table. Unfortunately, due to greater data security for this project, I am unable to publish the functional graphic online. 
                      </p>
                   </ul>
                   <ul>
                      <h3 class = "data-viz"><a href = #>regional monitoring</a></h3>
-                     <a href = #><img class="moratoria" src="region_monitoring.png" class="thumbnail"></a>
+                     <div class = "moratoria thumbnail curtain-thumbnail" style="width:376px; height:198.21875px; background:url('viz-moratoria-thumbnail.png') no-repeat center center"></div>
                      <p class = "description">
                      This was my team's endeavour to build a framework that consolidates visualization of many different, related views of some data. We wanted a simple and flexible dashboard, coded in a way to let charts/graphics be switched out as needed for the specific data/patterns to be communicated. 
                      I primarily worked on the map and line charts, which have linked behaviors depending on mouse events, while coordinating with another analyst who developed the layout using Bootstrap. Unfortunately, due to greater data security for this project, I am unable to publish this dashboard online. 
                      </p>
                   </ul>
                   <ul>
-                     <h3 class = "data-viz"><a href="http://isheu.github.io/viz-nearest-cbsa">distance to county border mapping</a></h3>
-                     <a href="http://isheu.github.io/viz-nearest-cbsa"><img src="county_border_preview.png" class="thumbnail"></a>
+                     <h3 class = "data-viz section-title"><a href="http://isheu.github.io/viz-nearest-cbsa">distance to county border mapping</a></h3>
+                     <a href="http://isheu.github.io/viz-nearest-cbsa"><div class = "nearest-cbsa thumbnail project-thumbnail" style="width:376px; height:289px; background:url('nearest-cbsa-thumbnail.png') no-repeat center center"></div></a>
                      <p class = "description">
                      This project gave me a chance to roll my own geojson and to figure out the nuances of working with geographic projections and geographic subunits, and to interface with the Google APIs in order to retrieve distance information. 
                      </p>
                      <a href = "https://github.com/isheu/viz-nearest-cbsa/blob/gh-pages/google_maps_driving_api.py"><li class = "author">Python Interface with Google Distance API</li></a>
                   </ul>
                   <ul>
-                     <h3 class = "data-viz"><a href="http://isheu.github.io/viz-drug-test-utilization">lab testing overutilization tool</a></h3>
-                     <a href="http://isheu.github.io/viz-drug-test-utilization"><img src="mue_violators.png" class="thumbnail"></a>
+                     <h3 class = "data-viz section-title"><a href="http://isheu.github.io/viz-drug-test-utilization">lab testing overutilization tool</a></h3>
+                     <a href="http://isheu.github.io/viz-drug-test-utilization"><div class = "drug-test-utilization thumbnail project-thumbnail" style="width:376px; height:184px; background:url('drug-test-utilization-thumbnail.png') no-repeat center center"></div></a>
                      <p class = "description">
                      The purpose of this project was to create a presentation tool that allows users to sift through a wide array of results, which begin with a broad description of the behavior, to more and more specific instances. 
                      </p>
                   </ul>
                   <ul>
-                     <h3 class = "data-viz"><a href="http://isheu.github.io/viz-nytimes-tax-graphic">ny times graphic study</a></h3>
-                     <a href="http://isheu.github.io/viz-nytimes-tax-graphic"><img src="tax_graphic.png" class="thumbnail"></a>
+                     <h3 class = "data-viz section-title"><a href="http://isheu.github.io/viz-nytimes-tax-graphic">ny times graphic study</a></h3>
+                     <a href="http://isheu.github.io/viz-nytimes-tax-graphic"><div class = "nytimes-graphic thumbnail project-thumbnail" style="width:376px; height:142px; background:url('nytimes-graphic-thumbnail.png') no-repeat center center"></div></a>
                      <p class = "description">
                      One of my favorite interactive graphics of 2013 was the New York Times' examination of the tax rate paid by U.S. companies: <a href = "http://www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html?_r=1&amp;&amp;gwt=regi">Across U.S. Companies, Tax Rates Vary Greatly</a>.
                      The bubble placement along a meaningful dimension, and excellent accompanying annotations (with intuitively-linked tooltips) really did it for me. But I was not at all sure how they performed the bubble placement for this graphic. I know of the treemap layout which can pack rectangles tightly, but how did they pack circles while constraining the x-position? The circle-packing problem into a rectangular region is not trivial, so I wanted to see how I could get an approximation. 
@@ -98,25 +130,25 @@
                <div id = "analysis" class = "project_div">
                   <h2> pattern mining, machine learning </h2>
                   <ul>
-                     <h3><a href="http://isheu.github.io/stats-pattern-mining/">standard of care based on frequent itemsets</a></h3>
+                     <h3 class="section-title"><a href="http://isheu.github.io/stats-pattern-mining/">standard of care based on frequent itemsets</a></h3>
                      <p class = "description">
                      In this project, I wanted to identify frequently-seen sequences of procedures for patients with certain conditions. This could help to identify established standards of care, starting directly from the data. Such information would be useful to identify suspect providers who deviate from these standards. 
                      </p>
                   </ul>
                   <ul>
-                     <h3><a href="http://isheu.github.io/stats-pattern-mining/">classifying physician specialties with topic model</a></h3>
+                     <h3 class="section-title"><a href="http://isheu.github.io/stats-pattern-mining/">classifying physician specialties with topic model</a></h3>
                      <p class = "description">
                      When investigating providers, I had access to their self-reported specialty, but these fields are not always reliable. Specialty information can help to set our expectations about their behavior, and here I set out to determine specialty based on how the provider practices (what procedures they bill, patients they see) rather than the reported value. I investigated here the use of a topic model to generate meaningful specialties (topics). 
                      </p>
                   </ul>
                   <ul>
-                     <h3><a href="http://isheu.github.io/stats-pattern-mining/">text field classification of comment text</a></h3>
+                     <h3 class="section-title"><a href="http://isheu.github.io/stats-pattern-mining/">text field classification of comment text</a></h3>
                      <p class = "description">
                      This project was my first introduction to topic models. I used R's topicmodels package to categorize the freeform "comment" fields in one of Medicare's provider enrollment databases. 
                      </p>
                   </ul>
                   <ul>
-                     <h3><a href="http://suzukilab.uchicago.edu">tumor detection for CT colonography scans</a></h3>
+                     <h3 class="section-title"><a href="http://suzukilab.uchicago.edu">tumor detection for CT colonography scans</a></h3>
                      <p class = "description">
                      As a student and for over a year after graduating from the University of Chicago, I worked with Dr. Kenji Suzuki in his Medical Physics / Computer Vision lab developing algorithms for computer-aided detection (CAD) of tumors. 
                      In this time, I learned about several machine learning algorithms, including ANN and SVM, and became especially comfortable thinking about evaluation of models, etc. A major project that I worked on 
@@ -132,52 +164,43 @@
       </div>
       <script>
          var clicked_referrals = 0;
+         $(".curtain-thumbnail").mouseover(function() { $(this).addClass("hovered").html("Click to enlarge") })
+         $(".curtain-thumbnail").mouseout(function() { $(this).removeClass("hovered").html("") })
+         $(".project-thumbnail").mouseover(function() { $(this).addClass("hovered").html("Click to go to project page") })
+         $(".project-thumbnail").mouseout(function() { $(this).removeClass("hovered").html("") })
          $(".referrals").click(function() {
             if (clicked_moratoria | clicked_referrals) {
-               $(".moratoria-curtain").animate({
-                  height: "0px"
-               });
+               $(".curtain").animate({ height: "0px" });
+               $(".curtain").removeClass("curtain-down")
                clicked_moratoria = 0;
-               $(".referrals-curtain").animate({
-                  height: "0px"
-               });
                clicked_referrals = 0;
             }
             else {
-               $(".referrals-curtain").animate({
-                  height: "569px"
-               });
+               $("#referrals-curtain").addClass("curtain-down")
+               $("#referrals-curtain").animate({ height: "569px" });
                clicked_referrals = 1;
-               $(".referrals-curtain").click(function() {
-                  $(".referrals-curtain").animate({
-                     height: "0px"
-                  });
+               $("#referrals-curtain").click(function() {
+                  $("#referrals-curtain").animate({ height: "0px" });
+                  $("#referrals-curtain").removeClass("curtain-down")
                   clicked_referrals = 0;
                })
             }
          })
-
          var clicked_moratoria = 0;
          $(".moratoria").click(function() {
             if (clicked_moratoria | clicked_referrals) {
-               $(".referrals-curtain").animate({
-                  height: "0px"
-               });
+               $(".curtain").animate({ height: "0px" });
+               $(".curtain").removeClass("curtain-down")
                clicked_referrals = 0;
-               $(".moratoria-curtain").animate({
-                  height: "0px"
-               });
                clicked_moratoria = 0;
             }
             else {
-               $(".moratoria-curtain").animate({
-                  height: "768px"
-               });
+               $("#moratoria-curtain").addClass("curtain-down")
+               $("#moratoria-curtain").animate({ height: "625px" });
                clicked_moratoria = 1;
-               $(".moratoria-curtain").click(function() {
-                  $(".moratoria-curtain").animate({
-                     height: "0px"
-                  });
+               $("#moratoria-curtain").click(function() {
+                  $("#moratoria-curtain").animate({ height: "0px" });
+                  $("#moratoria-curtain").removeClass("curtain-down")
                   clicked_moratoria = 0;
                })
             }

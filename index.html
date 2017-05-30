@@ -59,6 +59,8 @@
    </head>
    <body>
       <div class="wrapper">
+         <img id="outlier-curtain" class="curtain" style= "height:0px; width:965px; margin-left:-435px; margin-top:-100px; position:fixed; top:25%; left:50%; align:center" src="viz-outlier-physicians-lookup.png">
+         <img id="entity-curtain" class="curtain" style= "height:0px; width:965px; margin-left:-435px; margin-top:-100px; position:fixed; top:25%; left:50%; align:center" src="viz-entity-relationships.png">
          <img id="referrals-curtain" class="curtain" style= "height:0px; width:965px; margin-left:-435px; margin-top:-100px; position:fixed; top:25%; left:50%; align:center" src="viz-referral-relationships.png">
          <img id="moratoria-curtain" class="curtain" style= "height:0px; width:965px; margin-left:-435px; margin-top:-100px; position:fixed; top:25%; left:50%; align:center" src="viz-moratoria.png">
          <header>
@@ -87,6 +89,20 @@
                <!-- <p> Content knowledge - fraud, metrics engineering -->
                <div id = "data-viz" class = "project_div">
                   <h2> data visualization </h2>
+                  <ul>
+                     <h3 class = "data-viz"><a href = #>contractual relationship browser</a></h3>
+                     <div class = "entity thumbnail curtain-thumbnail" style="width:376px; height:198.21875px; background:url('viz-entity-relationships-thumbnail.png') no-repeat center center"></div>
+                     <p class = "description">
+                     I developed this tool for a client whose requirements were to browse multiple healthcare providers and their associates at once to identify shared contractual relationships. An array of interactive functions is provided to allow the user to build the network being examined and to subset to links with particular characteristics (shared ownership by all currently-searched entities). Unfortunately, due to greater data security for this project, I am unable to publish the functional graphic online. 
+                     </p>
+                  </ul>
+                  <ul>
+                     <h3 class = "data-viz"><a href = #>outlier physicians lookup</a></h3>
+                     <div class = "outlier thumbnail curtain-thumbnail" style="width:376px; height:198.21875px; background:url('viz-outlier-physicians-lookup-thumbnail.png') no-repeat center center"></div>
+                     <p class = "description">
+                     For this project, my team and I designed an interface that surfaces physicians who are outliers in a wide range of behaviors while providing full detail about the typical behavior of their peer group(s) and their overall utilization. Unfortunately, due to greater data security for this project, I am unable to publish the functional graphic online. 
+                     </p>
+                  </ul>
                   <ul>
                      <h3 class = "data-viz"><a href = #>referral networks</a></h3>
                      <div class = "referrals thumbnail curtain-thumbnail" style="width:376px; height:198.21875px; background:url('viz-referral-relationships.png') no-repeat center center"></div>
@@ -164,16 +180,61 @@
       </div>
       <script>
          var clicked_referrals = 0;
+         var clicked_moratoria = 0;
+         var clicked_outlier = 0;
+         var clicked_entity = 0;
          $(".curtain-thumbnail").mouseover(function() { $(this).addClass("hovered").html("Click to enlarge") })
          $(".curtain-thumbnail").mouseout(function() { $(this).removeClass("hovered").html("") })
          $(".project-thumbnail").mouseover(function() { $(this).addClass("hovered").html("Click to go to project page") })
          $(".project-thumbnail").mouseout(function() { $(this).removeClass("hovered").html("") })
-         $(".referrals").click(function() {
-            if (clicked_moratoria | clicked_referrals) {
+         $(".outlier").click(function() {
+            if (clicked_entity | clicked_outlier | clicked_moratoria | clicked_referrals) {
                $(".curtain").animate({ height: "0px" });
                $(".curtain").removeClass("curtain-down")
                clicked_moratoria = 0;
                clicked_referrals = 0;
+               clicked_outlier = 0;
+               clicked_entity = 0;
+            }
+            else {
+               $("#outlier-curtain").addClass("curtain-down")
+               $("#outlier-curtain").animate({ height: "650px" });
+               clicked_outlier = 1;
+               $("#outlier-curtain").click(function() {
+                  $("#outlier-curtain").animate({ height: "0px" });
+                  $("#outlier-curtain").removeClass("curtain-down")
+                  clicked_outlier = 0;
+               })
+            }
+         })
+         $(".entity").click(function() {
+            if (clicked_entity | clicked_outlier | clicked_moratoria | clicked_referrals) {
+               $(".curtain").animate({ height: "0px" });
+               $(".curtain").removeClass("curtain-down")
+               clicked_moratoria = 0;
+               clicked_referrals = 0;
+               clicked_outlier = 0;
+               clicked_entity = 0;
+            }
+            else {
+               $("#entity-curtain").addClass("curtain-down")
+               $("#entity-curtain").animate({ height: "650px" });
+               clicked_entity = 1;
+               $("#entity-curtain").click(function() {
+                  $("#entity-curtain").animate({ height: "0px" });
+                  $("#entity-curtain").removeClass("curtain-down")
+                  clicked_entity = 0;
+               })
+            }
+         })
+         $(".referrals").click(function() {
+            if (clicked_entity | clicked_outlier | clicked_moratoria | clicked_referrals) {
+               $(".curtain").animate({ height: "0px" });
+               $(".curtain").removeClass("curtain-down")
+               clicked_moratoria = 0;
+               clicked_referrals = 0;
+               clicked_outlier = 0;
+               clicked_entity = 0;
             }
             else {
                $("#referrals-curtain").addClass("curtain-down")
@@ -186,13 +247,14 @@
                })
             }
          })
-         var clicked_moratoria = 0;
          $(".moratoria").click(function() {
-            if (clicked_moratoria | clicked_referrals) {
+            if (clicked_entity | clicked_outlier | clicked_moratoria | clicked_referrals) {
                $(".curtain").animate({ height: "0px" });
                $(".curtain").removeClass("curtain-down")
                clicked_referrals = 0;
                clicked_moratoria = 0;
+               clicked_outlier = 0;
+               clicked_entity = 0;
             }
             else {
                $("#moratoria-curtain").addClass("curtain-down")
